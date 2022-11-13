@@ -21,6 +21,8 @@ public:
     int getSize() const;
     char *getChars() const;
     void setChars(char *chars);
+
+    bool operator==(String& newString);
 };
 
 

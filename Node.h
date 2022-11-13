@@ -18,7 +18,7 @@ public:
     Node(String value);
 
     // Getter & setters
-    const String &getValue() const;
+    String &getValue();
     void setValue(const String &value);
     Node *getLeft() const;
     void setLeft(Node *left);

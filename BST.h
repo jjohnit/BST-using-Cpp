@@ -11,6 +11,7 @@
 
 class BST {
     Node* root = nullptr;
+    int noOfElements;
 
     void setRoot(Node *root);
     // Method to recursively print nodes
@@ -26,11 +27,15 @@ public:
 
     // Getters & setters
     Node *getRoot() const;
+    int getNoOfElements() const;
 
 
     // To compare a & b.
     // 1 - a greater than b, 0 - a equal to b, -1 - a less than b
     int compareStrings(std::string a, std::string b);
+
+    // Check whether a string is present in the nodes
+    bool contains(String value);
 
     // To insert a string to the BST
     Node* insert(String value);

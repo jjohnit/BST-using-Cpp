@@ -11,7 +11,7 @@ Node::Node(String value) : value(value) {
     left = nullptr;
 }
 
-const String &Node::getValue() const {
+String &Node::getValue() {
     return value;
 }
 

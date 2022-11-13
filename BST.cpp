@@ -6,7 +6,7 @@
 #include "BST.h"
 
 BST::BST(){
-
+    noOfElements = 0;
 }
 
 BST::~BST() {
@@ -15,6 +15,7 @@ BST::~BST() {
 
 BST::BST(BST &bst) {
     Node *bstRoot = bst.getRoot();
+    noOfElements = bst.getNoOfElements();
     root = new Node();
     if(bstRoot != nullptr){
         root->setValue(bstRoot->getValue());
@@ -26,6 +27,10 @@ Node *BST::getRoot() const {
     return root;
 }
 
+int BST::getNoOfElements() const {
+    return noOfElements;
+}
+
 int BST::compareStrings(std::string a, std::string b) {
     if (a < b)
         return -1;
@@ -33,6 +38,20 @@ int BST::compareStrings(std::string a, std::string b) {
         return 1;
     else
         return 0;
+}
+
+bool BST::contains(String value){
+    Node* node = root;
+    while (node != nullptr){
+        if (node->getValue() == value){
+            return true;
+        } else if (compareStrings(value.getChars(), node->getValue().getChars()) > 0) {
+            node = node->getRight();
+        } else{
+            node = node->getLeft();
+        }
+    }
+    return false;
 }
 
 Node* BST::insert(String value){
@@ -58,8 +77,10 @@ Node* BST::insert(String value){
         // Add the new node to the correct side
         if(BST::compareStrings(previousNode->getValue().getChars(), value.getChars()) > 0){
             previousNode->setLeft(newNode);
+            noOfElements++;
         } else if (BST::compareStrings(previousNode->getValue().getChars(), value.getChars()) < 0){
             previousNode->setRight(newNode);
+            noOfElements++;
         }
         return root;
     }

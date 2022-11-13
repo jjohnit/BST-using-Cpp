@@ -19,11 +19,18 @@ int main() {
             s1 = s2;
             s2 = *temp;
         }
+        // Check weather s2 is a proper subset of s1
         else if (command == 'b'){
-            std::cout << 'b';
+            // S1 should have atleast one element which is not in S2, for S2 to be a proper subset
+            if(s1.getNoOfElements() <= s2.getNoOfElements()) {
+                std::cout << "S2 is not a proper subset of S1";
+                break;
+            }
+
         }
+        // Deep copy S1 to S2
         else if (command == 'c'){
-            std::cout << 'c';
+            s2.deepCopy(s1);
         }
         // Displays s1 and s2
         else if (command == 'l'){

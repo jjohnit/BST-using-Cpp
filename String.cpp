@@ -5,6 +5,7 @@
 #include <cstring>
 #include <string>
 #include "String.h"
+#include "typeinfo"
 
 String::String() {}
 
@@ -36,4 +37,14 @@ void String::setChars(char *chars) {
 
 String::~String() {
     delete chars_;
+}
+
+// To check whether 2 string are equal
+bool String::operator==(String &newString) {
+    if(typeid(*this) != typeid(newString))
+        return false;
+    if (size_ == newString.getSize() && strcmp(chars_, newString.getChars()) == 0) {
+        return true;
+    }
+    return false;
 }
