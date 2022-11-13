@@ -17,6 +17,13 @@ class BST {
     std::string displayNode(Node* node, std::string &output);
 
 public:
+    // Constructor
+    BST();
+    // Copy Constructor
+    BST(BST &bst);
+
+    virtual ~BST();
+
     // Getters & setters
     Node *getRoot() const;
 
@@ -30,6 +37,12 @@ public:
 
     // To display the elements of BST
     void display();
+
+    // To get a new deep copy of the node passed
+    Node* getCopy(Node* Node);
+
+    // To deep copy from another BST
+    void deepCopy(BST bst);
 };
 
 

@@ -5,6 +5,7 @@
 int main() {
     char command;
     BST s1;
+    BST s2;
     while (true){
         std::cout << "\nEnter a command\n(e, s, b, c, l, a, u, i, q)" << std::endl;
         std::cin >> command;

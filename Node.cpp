@@ -4,6 +4,13 @@
 
 #include "Node.h"
 
+Node::Node() {}
+
+Node::Node(String value) : value(value) {
+    right = nullptr;
+    left = nullptr;
+}
+
 const String &Node::getValue() const {
     return value;
 }
@@ -26,9 +33,4 @@ Node *Node::getRight() const {
 
 void Node::setRight(Node *right) {
     Node::right = right;
-}
-
-Node::Node(String value) : value(value) {
-    right = nullptr;
-    left = nullptr;
 }

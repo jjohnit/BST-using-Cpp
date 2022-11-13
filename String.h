@@ -10,7 +10,11 @@ class String {
     int size_;
     char* chars_;
 public:
+    String();
     String(char* chars);
+    String(String &string);
+
+    ~String();
 
 public:
     // Getters & setters

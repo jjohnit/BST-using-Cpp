@@ -6,6 +6,21 @@
 #include <string>
 #include "String.h"
 
+String::String() {}
+
+String::String(char* value) {
+    chars_ = new char[15];
+    strcpy(chars_, value);
+    size_ = strlen(chars_);
+}
+
+// COpy constructor
+String::String(String &string) {
+    chars_ = new char[15];
+    strcpy(chars_, string.getChars());
+    size_ = string.getSize();
+}
+
 int String::getSize() const {
     return size_;
 }
@@ -19,8 +34,6 @@ void String::setChars(char *chars) {
     size_ = strlen(chars_);
 }
 
-String::String(char* value) {
-    chars_ = new char[15];
-    strcpy(chars_, value);
-    size_ = strlen(chars_);
+String::~String() {
+    delete chars_;
 }

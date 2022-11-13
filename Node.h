@@ -14,6 +14,7 @@ class Node {
     Node* right;
 
 public:
+    Node();
     Node(String value);
 
     // Getter & setters

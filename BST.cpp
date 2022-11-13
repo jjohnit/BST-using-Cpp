@@ -5,12 +5,21 @@
 #include <iostream>
 #include "BST.h"
 
-Node *BST::getRoot() const {
-    return root;
+BST::BST(){
+
 }
 
-void BST::setRoot(Node *root) {
-    BST::root = root;
+BST::~BST() {
+    delete root;
+}
+
+BST::BST(BST &bst) {
+    root = new Node();
+    root = getCopy(bst.getRoot());
+}
+
+Node *BST::getRoot() const {
+    return root;
 }
 
 int BST::compareStrings(std::string a, std::string b) {
@@ -65,4 +74,17 @@ std::string BST::displayNode(Node* node, std::string &output) {
         return output;
     } else
         return "";
+}
+
+Node* BST::getCopy(Node* node){
+    if(node != nullptr){
+        Node newNode(*node);
+        newNode.setLeft(getCopy(node->getLeft()));
+        newNode.setRight(getCopy(node->getRight()));
+        return &newNode;
+    }
+}
+
+void BST::deepCopy(BST bst){
+    root = getCopy(bst.getRoot());
 }
