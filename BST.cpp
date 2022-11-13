@@ -14,8 +14,12 @@ BST::~BST() {
 }
 
 BST::BST(BST &bst) {
+    Node *bstRoot = bst.getRoot();
     root = new Node();
-    root = getCopy(bst.getRoot());
+    if(bstRoot != nullptr){
+        root->setValue(bstRoot->getValue());
+        root = getCopy(bstRoot);
+    }
 }
 
 Node *BST::getRoot() const {
@@ -62,6 +66,10 @@ Node* BST::insert(String value){
 }
 
 void BST::display() {
+    if(root == nullptr){
+        std::cout << "BST is empty";
+        return;
+    }
     std::string output;
     std::cout << displayNode(root, output);
 }
@@ -78,10 +86,11 @@ std::string BST::displayNode(Node* node, std::string &output) {
 
 Node* BST::getCopy(Node* node){
     if(node != nullptr){
-        Node newNode(*node);
-        newNode.setLeft(getCopy(node->getLeft()));
-        newNode.setRight(getCopy(node->getRight()));
-        return &newNode;
+        Node* newNode = new Node();
+        newNode->setValue(node->getValue());
+        newNode->setLeft(getCopy(node->getLeft()));
+        newNode->setRight(getCopy(node->getRight()));
+        return newNode;
     }
 }
 

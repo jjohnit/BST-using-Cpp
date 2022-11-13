@@ -9,11 +9,15 @@ int main() {
     while (true){
         std::cout << "\nEnter a command\n(e, s, b, c, l, a, u, i, q)" << std::endl;
         std::cin >> command;
+        // Erase s1
         if (command == 'e'){
-            std::cout << 'e';
+            s1 = BST();
         }
+        // Switches s1 & s2
         else if (command == 's'){
-            std::cout << 's';
+            BST* temp = new BST(s1);
+            s1 = s2;
+            s2 = *temp;
         }
         else if (command == 'b'){
             std::cout << 'b';
@@ -21,8 +25,12 @@ int main() {
         else if (command == 'c'){
             std::cout << 'c';
         }
+        // Displays s1 and s2
         else if (command == 'l'){
-            std::cout << 'l';
+            std::cout << "S1 : ";
+            s1.display();
+            std::cout << "S2 : ";
+            s2.display();
         }
         else if (command == 'a'){
             std::cout << 'a';
