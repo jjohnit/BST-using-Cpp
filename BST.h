@@ -6,15 +6,30 @@
 #define PROJECT3_BST_H
 
 
+#include <string>
 #include "Node.h"
 
 class BST {
-    Node* root;
+    Node* root = nullptr;
+
+    void setRoot(Node *root);
+    // Method to recursively print nodes
+    std::string displayNode(Node* node, std::string &output);
 
 public:
     // Getters & setters
     Node *getRoot() const;
-    void setRoot(Node *root);
+
+
+    // To compare a & b.
+    // 1 - a greater than b, 0 - a equal to b, -1 - a less than b
+    int compareStrings(std::string a, std::string b);
+
+    // To insert a string to the BST
+    Node* insert(String value);
+
+    // To display the elements of BST
+    void display();
 };
 
 

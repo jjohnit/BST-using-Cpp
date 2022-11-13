@@ -14,6 +14,8 @@ class Node {
     Node* right;
 
 public:
+    Node(String value);
+
     // Getter & setters
     const String &getValue() const;
     void setValue(const String &value);

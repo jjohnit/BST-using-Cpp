@@ -8,11 +8,13 @@
 
 class String {
     int size_;
-    char* chars;
+    char* chars_;
+public:
+    String(char* chars);
+
 public:
     // Getters & setters
     int getSize() const;
-    void setSize(int size);
     char *getChars() const;
     void setChars(char *chars);
 };

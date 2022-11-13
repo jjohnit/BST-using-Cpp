@@ -27,3 +27,8 @@ Node *Node::getRight() const {
 void Node::setRight(Node *right) {
     Node::right = right;
 }
+
+Node::Node(String value) : value(value) {
+    right = nullptr;
+    left = nullptr;
+}

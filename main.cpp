@@ -1,8 +1,10 @@
 #include <iostream>
 #include "String.h"
+#include "BST.h"
 
 int main() {
     char command;
+    BST s1;
     while (true){
         std::cout << "\nEnter a command\n(e, s, b, c, l, a, u, i, q)" << std::endl;
         std::cin >> command;
@@ -28,7 +30,12 @@ int main() {
             std::cout << 'u';
         }
         else if (command == 'i'){
-            std::cout << 'i';
+            std::string value;
+            std::cout << "Enter the string to insert into S1 : ";
+            std::cin >> value;
+            String string1(value.data());
+            s1.insert(string1);
+            s1.display();
         }
         else if (command == 'q'){
             std::cout << 'q';

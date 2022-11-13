@@ -1,4 +1,23 @@
 # ninja log v5
-18	800	6900079934528255	CMakeFiles/Project3.dir/main.cpp.obj	74980ed0456e1862
-801	944	6900079935920278	Project3.exe	b6f9e86f6ca8cc66
-9	146	6900079927957214	CMakeFiles/Project3.dir/String.cpp.obj	dc21378b6602140f
+14	881	6900307403746578	CMakeFiles/Project3.dir/main.cpp.obj	74980ed0456e1862
+4	137	6900307396290060	CMakeFiles/Project3.dir/String.cpp.obj	dc21378b6602140f
+941	1104	6900307405897996	Project3.exe	cab6e1e26a394482
+9	127	6900307396177617	CMakeFiles/Project3.dir/Node.cpp.obj	53859377e15cfdf2
+20	940	6900307404306523	CMakeFiles/Project3.dir/BST.cpp.obj	ce01b87dcdbd38df
+8	119	6900311108382264	CMakeFiles/Project3.dir/Node.cpp.obj	53859377e15cfdf2
+3	128	6900311108484792	CMakeFiles/Project3.dir/String.cpp.obj	dc21378b6602140f
+15	823	6900311115448634	CMakeFiles/Project3.dir/main.cpp.obj	74980ed0456e1862
+20	895	6900311116162558	CMakeFiles/Project3.dir/BST.cpp.obj	ce01b87dcdbd38df
+901	1028	6900311117426936	Project3.exe	cab6e1e26a394482
+3	690	6900317510983895	CMakeFiles/Project3.dir/String.cpp.obj	dc21378b6602140f
+12	866	6900317512777286	CMakeFiles/Project3.dir/main.cpp.obj	74980ed0456e1862
+16	892	6900317513040146	CMakeFiles/Project3.dir/BST.cpp.obj	ce01b87dcdbd38df
+0	13	0	clean	51ec05efbde4e425
+9	580	6900319850116176	CMakeFiles/Project3.dir/String.cpp.obj	dc21378b6602140f
+14	872	6900319853084194	CMakeFiles/Project3.dir/main.cpp.obj	74980ed0456e1862
+19	947	6900319853817001	CMakeFiles/Project3.dir/BST.cpp.obj	ce01b87dcdbd38df
+7	105	6900327096417319	CMakeFiles/Project3.dir/Node.cpp.obj	53859377e15cfdf2
+13	554	6900327100900709	CMakeFiles/Project3.dir/String.cpp.obj	dc21378b6602140f
+18	805	6900327103433728	CMakeFiles/Project3.dir/main.cpp.obj	74980ed0456e1862
+23	893	6900327104288953	CMakeFiles/Project3.dir/BST.cpp.obj	ce01b87dcdbd38df
+893	1063	6900327105954548	Project3.exe	cab6e1e26a394482
