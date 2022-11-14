@@ -15,9 +15,9 @@ BST::~BST() {
 
 BST::BST(BST &bst) {
     Node *bstRoot = bst.getRoot();
-    noOfElements = bst.getNoOfElements();
-    root = new Node();
     if(bstRoot != nullptr){
+        noOfElements = bst.getNoOfElements();
+        root = new Node();
         root->setValue(bstRoot->getValue());
         root = getCopy(bstRoot);
     }
@@ -69,11 +69,12 @@ bool BST::isSubsetCheck(Node* node) {
     return true;
 }
 
-Node* BST::insert(String value){
+bool BST::insert(String value){
     Node *newNode = new Node(value);
     // If root is empty, add new string as root
     if (root == nullptr){
         root = newNode;
+        noOfElements = 1;
     }
     else {
         Node *currentNode = root;
@@ -82,7 +83,7 @@ Node* BST::insert(String value){
             previousNode = currentNode;
             // If there is an existing node with same value, do nothing
             if (BST::compareStrings(currentNode->getValue().getChars(), value.getChars()) == 0){
-                return root;
+                return false;
             } else if (BST::compareStrings(currentNode->getValue().getChars(), value.getChars()) > 0){
                 currentNode = currentNode->getLeft();
             } else{
@@ -97,7 +98,7 @@ Node* BST::insert(String value){
             previousNode->setRight(newNode);
             noOfElements++;
         }
-        return root;
+        return true;
     }
 }
 

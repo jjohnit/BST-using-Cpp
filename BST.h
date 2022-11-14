@@ -42,7 +42,7 @@ public:
     bool contains(String value);
 
     // To insert a string to the BST
-    Node* insert(String value);
+    bool insert(String value);
 
     // To display the elements of BST
     void display();
