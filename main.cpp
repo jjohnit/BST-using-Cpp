@@ -7,7 +7,7 @@ int main() {
     BST s1;
     BST s2;
     while (true){
-        std::cout << "\nEnter a command\n(e, s, b, c, l, a, u, i, q)" << std::endl;
+        std::cout << "\n\nEnter a command\n(e, s, b, c, l, a, u, i, q)" << std::endl;
         std::cin >> command;
         // Erase s1
         if (command == 'e'){
@@ -55,13 +55,16 @@ int main() {
             String string1(value.data());
             s1.insert(string1);
 //            s1.display();
+            std::cout << "\n" << value << " is inserted to S1\n";
         }
         // Union of S1 & S2 is saved in S1
         else if (command == 'u'){
             s1.unionOf(s2.getRoot());
+            std::cout << "S1 is modified to be the union of S1 & S2";
         }
         else if (command == 'i'){
-
+            s1.intersection(s2);
+            std::cout << "S1 is modified to be the intersection of S1 & S2";
         }
         else if (command == 'q'){
             std::cout << 'q';

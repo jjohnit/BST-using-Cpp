@@ -18,6 +18,8 @@ class BST {
     std::string displayNode(Node* node, std::string &output);
     // Recuresively check the childs of a node is subset of this BST
     bool isSubsetCheck(Node* node);
+    // Recursively add the common nodes to the new bst
+    void intersectionOf(BST* bst, Node* node);
 
 public:
     // Constructor
@@ -54,7 +56,11 @@ public:
     // Check weather a bst is a proper subset of this BST
     bool isSubset(BST &bst);
 
+    // create the union uning the root node passed
     void unionOf(Node* node);
+
+    // Replace the current BST with the intersection of values from the parameter bst
+    void intersection(BST &bst);
 
 };
 

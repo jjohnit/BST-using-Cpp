@@ -138,6 +138,22 @@ void BST::unionOf(Node *node) {
     }
 }
 
+void BST::intersection(BST &bst) {
+    BST* newBst = new BST();
+    intersectionOf(newBst, bst.getRoot());
+    root = newBst->getRoot();
+}
+
+void BST::intersectionOf(BST* bst, Node* node) {
+    if(node != nullptr){
+        if (contains(node->getValue())){
+           bst->insert(node->getValue());
+        }
+        intersectionOf(bst, node->getLeft());
+        intersectionOf(bst, node->getRight());
+    }
+}
+
 //void BST::deepCopy(BST bst){
 //    Node *bstRoot = bst.getRoot();
 //    noOfElements = bst.getNoOfElements();
