@@ -16,6 +16,8 @@ class BST {
     void setRoot(Node *root);
     // Method to recursively print nodes
     std::string displayNode(Node* node, std::string &output);
+    // Recuresively check the childs of a node is subset of this BST
+    bool isSubsetCheck(Node* node);
 
 public:
     // Constructor
@@ -47,7 +49,13 @@ public:
     Node* getCopy(Node* Node);
 
     // To deep copy from another BST
-    void deepCopy(BST bst);
+//    void deepCopy(BST bst);
+
+    // Check weather a bst is a proper subset of this BST
+    bool isSubset(BST &bst);
+
+    void unionOf(Node* node);
+
 };
 
 

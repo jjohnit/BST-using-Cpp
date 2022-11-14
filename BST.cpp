@@ -54,6 +54,21 @@ bool BST::contains(String value){
     return false;
 }
 
+bool BST::isSubset(BST &bst){
+    return isSubsetCheck(bst.getRoot());
+}
+
+bool BST::isSubsetCheck(Node* node) {
+    if(node != nullptr){
+        if(!contains(node->getValue())){
+            return false;
+        } else if (!isSubsetCheck(node->getLeft()) || !isSubsetCheck(node->getRight())){
+            return false;
+        }
+    }
+    return true;
+}
+
 Node* BST::insert(String value){
     Node *newNode = new Node(value);
     // If root is empty, add new string as root
@@ -115,6 +130,20 @@ Node* BST::getCopy(Node* node){
     }
 }
 
-void BST::deepCopy(BST bst){
-    root = getCopy(bst.getRoot());
+void BST::unionOf(Node *node) {
+    if (node != nullptr){
+        insert(node->getValue());
+        unionOf(node->getLeft());
+        unionOf(node->getRight());
+    }
 }
+
+//void BST::deepCopy(BST bst){
+//    Node *bstRoot = bst.getRoot();
+//    noOfElements = bst.getNoOfElements();
+//    root = new Node();
+//    if(bstRoot != nullptr){
+//        root->setValue(bstRoot->getValue());
+//        root = getCopy(bstRoot);
+//    }
+//}
