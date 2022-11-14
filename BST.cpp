@@ -75,6 +75,7 @@ bool BST::insert(String value){
     if (root == nullptr){
         root = newNode;
         noOfElements = 1;
+        return true;
     }
     else {
         Node *currentNode = root;
@@ -129,6 +130,7 @@ Node* BST::getCopy(Node* node){
         newNode->setRight(getCopy(node->getRight()));
         return newNode;
     }
+    return node;
 }
 
 void BST::unionOf(Node *node) {

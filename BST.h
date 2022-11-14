@@ -13,7 +13,7 @@ class BST {
     Node* root = nullptr;
     int noOfElements;
 
-    void setRoot(Node *root);
+//    void setRoot(Node *root);
     // Method to recursively print nodes
     std::string displayNode(Node* node, std::string &output);
     // Recuresively check the childs of a node is subset of this BST
