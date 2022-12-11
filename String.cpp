@@ -15,7 +15,7 @@ String::String(char* value) {
     size_ = strlen(chars_);
 }
 
-// COpy constructor
+// Copy constructor
 String::String(String &string) {
     chars_ = new char[15];
     strcpy(chars_, string.getChars());
